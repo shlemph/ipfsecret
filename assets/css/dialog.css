@@ -1,0 +1,55 @@
+/**
+ * Modal box Css
+ * @Version 1.0
+ * @Author: Cristian Marian
+ * @E-mail: dev.cristian99@gmail.com
+ */
+.modal-sec-overlay {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.1);
+}
+.modal-box {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+}
+.modal-small {width: 375px;}
+.close-btn {
+    background-color: #FFF;
+    color: #aaa;
+    float: right;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+}
+.close-btn:hover,
+.close-btn:focus {
+    outline: none;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-title {
+    font-size: 18px;
+    padding: 5px;
+    font-family: sans-serif;
+    border-bottom: 1px solid #CCC;
+}
+.modal-content {
+    padding: 5px;
+    font-size: 12px;
+    font-family: sans-serif;
+}
+
+/* Modal Animation */
+@keyframes open-modal-animation{
+    from { margin: -15% auto; }
+    to { margin: 15% auto; }
+}

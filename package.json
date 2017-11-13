@@ -1,0 +1,54 @@
+{
+  "name": "ipfsecret",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/c2fo-lab/ipfsecret.git"
+  },
+  "license": "MIT",
+  "version": "0.1.0",
+  "author": "C2FO Innovation Lab",
+  "bin": {
+    "ipfsecret": "./bin/ipfsecret.js"
+  },
+  "description": "Secret key encryption for IPFS files",
+  "homepage": "https://c2folab.com",
+  "dependencies": {
+    "adm-zip": "^0.4.7",
+    "async": "^2.2.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "babelify": "^7.3.0",
+    "binary-split": "^1.0.3",
+    "blob-to-buffer": "^1.2.6",
+    "browserify": "latest",
+    "chop": "0.0.1",
+    "detect-browser": "^2.0.0",
+    "file-saver": "^1.3.3",
+    "he": "^1.1.1",
+    "install": "^0.10.1",
+    "ipfs-api": "^14.0.4",
+    "is-online": "^7.0.0",
+    "milligram": "^1.3.0",
+    "mkdirp": "^0.5.1",
+    "node-dir": "^0.1.17",
+    "normalize.css": "^7.0.0",
+    "npm": "^4.6.1",
+    "to-arraybuffer": "^1.0.1",
+    "webcrypto-crypt": "^0.1.15"
+  },
+  "devDependencies": {
+    "expect": "^1.20.2",
+    "mocha": "^3.2.0",
+    "stream-buffers": "^3.0.1"
+  },
+  "engines": {
+    "node": "8",
+    "npm": "4.5"
+  },
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf node_modules assets/fonts/* dist examples assets/js/sha512.txt",
+    "postinstall": "./bin/install.sh",
+    "test": "./node_modules/.bin/mocha --timeout 10000 --reporter spec"
+  }
+}

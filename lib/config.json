@@ -1,0 +1,98 @@
+{
+    "cmdline": {
+       "passConf": "Confirm passphrase: ",
+       "passPrompt": "Passphrase? "
+    },
+    "err" : {
+        "encryptFail": "Encryption failed- ",
+        "filePerms": "File permissions are insecure.",
+        "multiString": "Please pass in the path as a String.",
+        "notAHash": "Result is not a recognized IPFS hash format.",
+        "noEncrypt": "Data is not webcrypto-crypt encrypted.",
+        "noErr": "Expected error but got none.",
+        "noHidden": "Could not detect any hidden encrypted files.",
+        "noRead": "Could not read dir- ",
+        "noStat": "Could not stat file- ",
+        "noSupp": " is not supported.",
+        "noUnlink": "Could not unlink file- ",
+        "objEmpty": "Object is empty.",
+        "passOrOpt": "Please pass in a passphrase String or options Object.",
+        "passReqd": "Passphrase is required.",
+        "pathString": "Please pass in the path as a String.",
+        "redacted": "(REDACTED)",
+        "relLinks": "Expected relative links were not found.",
+        "tooLarge": "This file may be too large for your browser to download.",
+        "zeroByte": "Skipping zero byte file- "
+    },
+    "fonts": {
+        "localDir": "assets/fonts",
+        "localFile": "/tmp/roboto.zip",
+        "sourceUri": "https://google-webfonts-helper.herokuapp.com/api/fonts/roboto?download=zip&subsets=latin&variants=300,700,300italic,regular,700italic&formats=woff,woff2"
+    },
+    "ipfs": {
+        "cryptoLib": {
+            "integrityHash": "assets/js/sha512.txt",
+            "path": "js/ipfsecret.js",
+            "source": {
+                "name": "dist/ipfsecret.js"
+            }
+        },
+        "css": {
+            "base": {
+                "path": "styles/normalize.css",
+                "source": "normalize.css/normalize.css"
+            },
+            "dialog": {
+                "path": "styles/dialog.css",
+                "source": "assets/css/dialog.css"
+            },
+            "fonts": {
+                "path": "styles/fonts.css",
+                "source": "assets/css/fonts.css"
+            },
+            "main": {
+                "path": "styles/milligram.min.css",
+                "source": "milligram/dist/milligram.min.css"
+            },
+            "map": {
+                "path": "styles/milligram.min.css.map",
+                "source": "milligram/dist/milligram.min.css.map"
+            }
+        },
+        "decryptedPrefix": "decrypted",
+        "encryptedSuffix": "wcrypt",
+        "fonts": {
+            "path": "fonts/"
+        },
+        "footerLink": "https://ipfs.io",
+        "footerText": "IPFS",
+        "gatewayPort": 8080,
+        "gateways": [
+            "https://gateway.ipfs.io",
+            "https://earth.i.ipfs.io",
+            "https://mercury.i.ipfs.io",
+            "https://gateway.ipfsstore.it:8443",
+            "https://scrappy.i.ipfs.io",
+            "https://chappy.i.ipfs.io"
+        ],
+        "host": "127.0.0.1",
+        "mainIndex" : "ipfsecret.html",
+        "mainSubdir": "/ipfsecret",
+        "port": 5001,
+        "proto": "http",
+        "ui": {
+            "browserDecryptNotSupported": "Cannot decrypt this file in the browser.  Try downloading the encrypted file and decrypting it with node.js.",
+            "decrypt": "Decrypt",
+            "decrypting": "Decrypting",
+            "decryptUpdateDelay": 5,
+            "download": "Download",
+            "downloading": "Downloading, please wait",
+            "modified": "Date modified",
+            "name": "Name",
+            "offlineMode": "Offline mode detected.  Attempting redirect to local IPFS gateway.",
+            "offlineMonitorInterval": 10000,
+            "passphrase": "Passphrase",
+            "size": "Size"
+        }
+    }
+}
