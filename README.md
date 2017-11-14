@@ -73,7 +73,7 @@ If you are new to IPFS, there are guides for [getting started](https://ipfs.io/d
     λ ipfsecret add -wr node_modules/webcrypto-crypt
     Passphrase?
     Confirm passphrase:
-    http://localhost:8080/ipfs/QmWCGgmQdT1xNd44kUwEqY61aX551kRMwrXdvBPBGA1Qto/ipfsecret.html
+    http://127.0.0.1:8080/ipfs/QmWCGgmQdT1xNd44kUwEqY61aX551kRMwrXdvBPBGA1Qto/ipfsecret.html
 
 # Warnings
 

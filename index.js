@@ -1,3 +1,4 @@
+'use strict';
 const through = require('through2'),
     Crypto = require('./lib/crypto'),
     Indexer = require('./lib/indexer'),
@@ -8,7 +9,7 @@ module.exports = exports = function (ipfsOpts) {
 
     ipfsOpts = ipfsOpts || {};
 
-    const util = new Util(exports.DEBUG, ipfsOpts);
+    const util = new Util(exports.DEBUG, ipfsOpts),
         crypto = new Crypto(util),
         idx = new Indexer(util),
         ipfss = this;

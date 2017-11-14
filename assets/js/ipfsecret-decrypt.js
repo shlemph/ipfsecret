@@ -1,3 +1,4 @@
+'use strict';
 const BlobToBuffer = require('blob-to-buffer'),
     { detect } = require('detect-browser'),
     browser = detect(),
@@ -33,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     window.onclick = (e) => {if (e.target==modal) modal.style.display="none";};
 
     function checkBlob(size) {
-        let broken = false;
+        let broken;
         switch (browser && browser.name) {
             case 'chrome':
             case 'firefox':
@@ -54,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 }
                 break;
             default:
-                alert(browser.name + ' not supported');
+                broken = false;
         };
         return broken;
     }
