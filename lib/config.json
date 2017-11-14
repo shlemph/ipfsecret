@@ -20,6 +20,7 @@
         "passReqd": "Passphrase is required.",
         "pathString": "Please pass in the path as a String.",
         "redacted": "(REDACTED)",
+        "reqTimeout": "Request timed out.",
         "relLinks": "Expected relative links were not found.",
         "tooLarge": "This file may be too large for your browser to download.",
         "zeroByte": "Skipping zero byte file- "
@@ -81,7 +82,7 @@
         "port": 5001,
         "proto": "http",
         "ui": {
-            "browserDecryptNotSupported": "Cannot decrypt this file in the browser.  Try downloading the encrypted file and decrypting it with node.js.",
+            "browserDecryptNotSupported": "Sorry, this file cannot currently be decrypted.",
             "decrypt": "Decrypt",
             "decrypting": "Decrypting",
             "decryptUpdateDelay": 5,
@@ -89,9 +90,11 @@
             "downloading": "Downloading, please wait",
             "modified": "Date modified",
             "name": "Name",
-            "offlineMode": "Offline mode detected.  Attempting redirect to local IPFS gateway.",
+            "offlineMode": "Offline mode detected. Try local IPFS gateway?",
             "offlineMonitorInterval": 10000,
             "passphrase": "Passphrase",
+            "reqTimeoutDelay": 8000,
+            "requesting": "Requesting, please wait",
             "size": "Size"
         }
     }

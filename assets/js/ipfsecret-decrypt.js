@@ -64,31 +64,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
         isOnline().then(online => {
             if (!online && ((location.hostname !== 'localhost') &&
                 (location.hostname !== '127.0.0.1'))) {
-                alert(Config.ipfs.ui.offlineMode);
-                location.href = `${ Config.ipfs.proto }://` +
+                const href = `${ Config.ipfs.proto }://` +
                     `${ Config.ipfs.host }:${ Config.ipfs.gatewayPort }` +
                     `${ location.pathname }`;
+                 byId('footer-link').setAttribute('href', href);
+                 byId('footer-link').innerHTML = (Config.ipfs.ui.offlineMode);
+
             }
         });
     }
     checkOnlineStatus();
     setInterval(checkOnlineStatus, parseInt(Config.ipfs.ui
-        .offlineMonitorInterval));
-
-    //stackoverflow.com/a/18650828
-    function format(bytes, decimals) {
-        if(bytes === 0) return '0 B';
-        if (!bytes) return '';
-        const k = 1024,
-            dm = (decimals || 2) ,
-            sizes = ['B','KB','MB','GB','TB','PB','EB','ZB','YB'],
-            i = Math.floor(Math.log(bytes) / Math.log(k)),
-            re = /^(\d+)\.(\d)$/,
-            val = parseFloat((bytes/Math.pow(k, i)).toFixed(dm));
-        let text = val.toString();
-        if (text.match(re)) text = text + '0';
-        return text + ' ' + sizes[i];
-    }
+       .offlineMonitorInterval));
 
     function download() {
         const filename = decodeURI(byId('filename').getAttribute('value')),
@@ -96,13 +83,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
             done = format(size, 2),
             f = Path.basename(filename).replace(/\.[^\.]+$/,'');
 
-        let broken = checkBlob(size);
-        if (!broken) {
-            fetch(filename).then(function (res) {
+        let tooLarge = checkBlob(size);
+        if (!tooLarge) {
+            byId('form-fields').setAttribute('style', 'display:none');
+            byId('progress').innerHTML = Config.ipfs.ui.requesting + '...';
+            timeout(Config.ipfs.ui.reqTimeoutDelay, fetch(filename)).then(function(res) {
                 byId('progress').innerHTML = Config.ipfs.ui.downloading + '...';
                 res.blob()
                     .then(blob => {handleBlob(blob, size, done, f);})
                     .catch(err => {alert(err);});
+            }).catch(function(error) {
+                alert(Config.err.reqTimeout);
             });
         }
     }
@@ -123,6 +114,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }
         let idx = i + matcher.length - 1;
         return idx;
+    }
+
+    function format(bytes, decimals) {
+        if(bytes === 0) return '0 B';
+        if (!bytes) return '';
+        const k = 1024,
+            dm = (decimals || 2) ,
+            sizes = ['B','KB','MB','GB','TB','PB','EB','ZB','YB'],
+            i = Math.floor(Math.log(bytes) / Math.log(k)),
+            re = /^(\d+)\.(\d)$/,
+            val = parseFloat((bytes/Math.pow(k, i)).toFixed(dm));
+        let text = val.toString();
+        if (text.match(re)) text = text + '0';
+        return text + ' ' + sizes[i];
     }
 
     function handleBlob(blob, size, done, f) {
@@ -203,6 +208,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
           byId('filesize').setAttribute('value', filesize);
           modal.style.display = 'block';
           content.style.animation = opener;
+    }
+
+    function timeout(ms, promise) {
+        return new Promise(function(resolve, reject) {
+            setTimeout(function() {
+                reject(new Error("timeout"))
+            }, ms);
+            promise.then(resolve, reject);
+        });
     }
 
     document.body.addEventListener('click', handleClicks,false);
