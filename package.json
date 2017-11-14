@@ -5,13 +5,22 @@
     "url": "https://github.com/c2fo-lab/ipfsecret.git"
   },
   "license": "MIT",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "C2FO Innovation Lab",
-  "bin": {
-    "ipfsecret": "./bin/ipfsecret.js"
+  "description": "Symmetric cryptography wrapper for IPFS files with web gateway support",
+  "homepage": "https://c2fo-lab.github.io/IPFSecret/",
+  "keywords": [
+    "ipfs",
+    "webcrypto",
+    "aes-gcm",
+    "pbkdf2",
+    "subtlecrypto",
+    "js-ipfs-api"
+  ],
+  "bugs": {
+    "url": "https://github.com/c2fo-lab/IPFSecret/issues",
+    "email": "labs@c2fo.com"
   },
-  "description": "Secret key encryption for IPFS files",
-  "homepage": "https://c2folab.com",
   "dependencies": {
     "adm-zip": "^0.4.7",
     "async": "^2.2.0",
@@ -34,7 +43,7 @@
     "normalize.css": "^7.0.0",
     "npm": "^4.6.1",
     "to-arraybuffer": "^1.0.1",
-    "webcrypto-crypt": "^0.1.16"
+    "webcrypto-crypt": "^0.1.17"
   },
   "devDependencies": {
     "expect": "^1.20.2",
@@ -46,6 +55,9 @@
     "npm": "4.5"
   },
   "main": "index.js",
+  "bin": {
+    "ipfsecret": "./bin/ipfsecret.js"
+  },
   "scripts": {
     "clean": "rm -rf node_modules assets/fonts/* dist examples assets/js/sha512.txt",
     "postinstall": "./bin/install.sh",
