@@ -1,3 +1,7 @@
+## 2018-06-28  Release 0.1.3
+
+Upgrade package versions.
+
 ## 2017-11-14  Release 0.1.2
 
 Don't redirect on offline detect, update footer instead.
