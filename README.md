@@ -15,10 +15,6 @@
   * [Todo](#todo)
   * [See also](#see-also)
 
-<p align="center">
-  <a href="http://pix.toile-libre.org/upload/original/1510603241.png"><img width="50%" height="50%" src="http://pix.toile-libre.org/upload/original/1510603241.png"></a>
-</p>
-
 # Introduction
 
 IPFSecret lets you encrypt and decrypt IPFS files with a secret passphrase.
@@ -101,9 +97,9 @@ As part of the install process, IPFSecret adds a multihash for browser testing a
 
 | **OS** | **Environment** | **Version** |
 | :-------- | :------- | :------- |
-| Mac Sierra | Chrome  | 62  |
-| Mac Sierra | Firefox  | 57  |
-| Mac Sierra | Node  | 8.9.1 |
+| Mac Sierra | Chrome  | 67  |
+| Mac Sierra | Firefox  | 60  |
+| Mac Sierra | Node  | 8.11.3 |
 | Mac Sierra | Safari | 11.0 |
 
 ### Help
