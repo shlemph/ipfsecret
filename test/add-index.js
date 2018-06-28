@@ -19,8 +19,8 @@ process.env.IPFSECRET_ENV = 'test';
 function checkCSS(data, done) {
     expect(data.length).toEqual(5);
     data.forEach(d => {
-        expect(d).toIncludeKey('path');
-        expect(d).toIncludeKey('content');
+        expect(d).toHaveProperty('path');
+        expect(d).toHaveProperty('content');
     });
     expect(data[0].content.toString('utf8')).toMatch(/normalize.css v7.0.0/);
     expect(data[1].content.toString('utf8')).toMatch(/Modal box Css/);
@@ -32,18 +32,18 @@ function checkCSS(data, done) {
 }
 
 function checkEntryFormat(result, done) {
-    expect(result).toIncludeKey('path');
-    expect(result).toIncludeKey('hash');
-    expect(result).toIncludeKey('size');
+    expect(result).toHaveProperty('path');
+    expect(result).toHaveProperty('hash');
+    expect(result).toHaveProperty('size');
     done();
 }
 
 function checkFonts(data, done) {
     expect(data.length).toEqual(10);
     data.forEach(d => {
-        expect(d).toIncludeKey('path');
-        expect(d).toIncludeKey('content');
-        expect(Buffer.isBuffer(d.content)).toExist();
+        expect(d).toHaveProperty('path');
+        expect(d).toHaveProperty('content');
+        expect(Buffer.isBuffer(d.content)).toBeDefined();
     });
     expect(data[10]).toEqual(undefined);
     done();
@@ -92,10 +92,10 @@ function checkIndices(results, done) {
 
 function checkJS(data, done) {
     expect(data.length).toEqual(1);
-    expect(data[0]).toIncludeKey('path');
-    expect(data[0]).toIncludeKey('content');
-    expect(data[0].content).toMatch(/webcrypto-crypt/);
-    expect(data[0].content).toMatch(/"version": "0.1.12"/);
+    expect(data[0]).toHaveProperty('path');
+    expect(data[0]).toHaveProperty('content');
+    expect((data[0].content).toString()).toMatch(/webcrypto-crypt/g);
+    expect((data[0].content).toString()).toMatch(/"version": "0.1.18"/g);
     done();
 }
 

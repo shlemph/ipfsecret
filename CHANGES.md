@@ -1,3 +1,7 @@
+## 2018-06-28  Release 0.1.4
+
+Fix tests to use jest's expect() syntax where needed.
+
 ## 2018-06-28  Release 0.1.3
 
 Upgrade package versions.

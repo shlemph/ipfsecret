@@ -12,9 +12,9 @@ const bs58 = require('bs58'),
 process.env.IPFSECRET_ENV = 'test';
 
 function checkEntryFormat(result, done) {
-    expect(result).toIncludeKey('path');
-    expect(result).toIncludeKey('hash');
-    expect(result).toIncludeKey('size');
+    expect(result).toHaveProperty('path');
+    expect(result).toHaveProperty('hash');
+    expect(result).toHaveProperty('size');
     done();
 }
 
