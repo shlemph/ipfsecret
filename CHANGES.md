@@ -1,3 +1,7 @@
+## 2018-11-26  Release 0.1.5
+
+Upgrade npm package webcrypto-crypt.
+
 ## 2018-06-28  Release 0.1.4
 
 Fix tests to use jest's expect() syntax where needed.

@@ -95,7 +95,7 @@ function checkJS(data, done) {
     expect(data[0]).toHaveProperty('path');
     expect(data[0]).toHaveProperty('content');
     expect((data[0].content).toString()).toMatch(/webcrypto-crypt/g);
-    expect((data[0].content).toString()).toMatch(/"version": "0.1.18"/g);
+    expect((data[0].content).toString()).toMatch(/"version": "0.1.19"/g);
     done();
 }
 

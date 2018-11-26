@@ -5,7 +5,7 @@
     "url": "https://github.com/c2fo-lab/ipfsecret.git"
   },
   "license": "MIT",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "author": "C2FO Innovation Lab",
   "description": "Symmetric cryptography wrapper for IPFS files with web gateway support",
   "homepage": "https://c2fo-lab.github.io/IPFSecret/",
@@ -42,7 +42,7 @@
     "node-dir": "^0.1.17",
     "normalize.css": "^7.0.0",
     "to-arraybuffer": "^1.0.1",
-    "webcrypto-crypt": "^0.1.18"
+    "webcrypto-crypt": "^0.1.19"
   },
   "devDependencies": {
     "expect": "^23.1.0",
