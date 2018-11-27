@@ -79,13 +79,13 @@ If you are new to IPFS, there are guides for [getting started](https://ipfs.io/d
 * Entities with access to your IPFSecret multihashes that then guess, learn, or crack the relevant passphrase will be able to decrypt your data.
 * Unknown bugs in this code or its dependency tree (e.g., the [webcrypto-crypt](https://c2fo-lab.github.io/webcrypto-crypt) package) could render encryption ineffective.
 * Downloading large files over IPFS web gateways can be slow and in the case of decryption there is currently no feedback on download progress.
-* [Private Networks](https://github.com/ipfs/go-ipfs/blob/master/docs/experimental-features.md#private-networks), [public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography) tools, or something like [Decentralized Could](https://decentralized.cloud/) or [Firefox Send](https://send.firefox.com/) may better fit your needs.
+* [Private Networks](https://github.com/ipfs/go-ipfs/blob/master/docs/experimental-features.md#private-networks), [public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography) tools, or something like [FileNation](https://filenation.io/) or [Firefox Send](https://send.firefox.com/) may better fit your needs.
 
 # Testing
 
 ## Node.js
 
-Optionally run the relevant daemon using the [```--offline```](https://github.com/ipfs/go-ipfs/pull/2696#issuecomment-242664950) option for the duration of the tests.  Tests assume the API settings present in [```lib/config.js```](https://github.com/c2fo-lab/ipfsecret/blob/master/lib/config.json#L56-L60).
+Optionally run the relevant daemon using the [```--offline```](https://github.com/ipfs/go-ipfs/pull/2696#issuecomment-242664950) option for the duration of the tests.  Tests assume the API settings present in [```lib/config.js```](https://github.com/c2fo-lab/ipfsecret/blob/master/lib/config.json#L79-L83).
 
     λ npm run test
 
@@ -516,12 +516,16 @@ When instantiating a new IPFSecret object, you may optionally pass in ```options
 ## List known web gateways
 
     λ ipfsecret list
-    0 - https://gateway.ipfs.io
-    1 - https://earth.i.ipfs.io
-    2 - https://mercury.i.ipfs.io
-    3 - https://gateway.ipfsstore.it:8443
-    4 - https://scrappy.i.ipfs.io
-    5 - https://chappy.i.ipfs.io
+    0 - https://cloudflare-ipfs.com
+    1 - https://gateway.ipfs.io
+    2 - https://gateway.pinata.cloud
+    3 - https://ipfs.eternum.io
+    4 - https://ipfs.infura.io
+    5 - https://ipfs.io
+    6 - https://ipfs.jes.xxx
+    7 - https://ipfs.mle.party
+    8 - https://siderus.io
+    9 - https://xmine128.tk
 
 ## Specify a web gateway (instead of localhost) when outputting result
 
