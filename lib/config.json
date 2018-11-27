@@ -69,12 +69,16 @@
         "footerText": "IPFS",
         "gatewayPort": 8080,
         "gateways": [
+            "https://cloudflare-ipfs.com",
             "https://gateway.ipfs.io",
-            "https://earth.i.ipfs.io",
-            "https://mercury.i.ipfs.io",
-            "https://gateway.ipfsstore.it:8443",
-            "https://scrappy.i.ipfs.io",
-            "https://chappy.i.ipfs.io"
+            "https://gateway.pinata.cloud",
+            "https://ipfs.eternum.io",
+            "https://ipfs.infura.io",
+            "https://ipfs.io",
+            "https://ipfs.jes.xxx",
+            "https://ipfs.mle.party",
+            "https://siderus.io",
+            "https://xmine128.tk"
         ],
         "host": "127.0.0.1",
         "mainIndex" : "ipfsecret.html",
