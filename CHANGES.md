@@ -3,6 +3,7 @@
 Upgrade npm package webcrypto-crypt.
 Port to Buffer.from() API.
 Update list of known IPFS HTTPS gateways.
+Update list of tested environments.
 
 ## 2018-06-28  Release 0.1.4
 
